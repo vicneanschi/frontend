@@ -49,6 +49,14 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
         resolve: {
           loginRequired: loginRequired
         }
+      })
+      .state('meal', {
+        url: '/meal',
+        templateUrl: 'partials/meal.html',
+        controller: 'MealCtrl',
+        resolve: {
+          loginRequired: loginRequired
+        }
       });
 
     $urlRouterProvider.otherwise('/');
