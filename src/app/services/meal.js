@@ -7,11 +7,10 @@ angular.module('MyApp')
               title: mealData.title,
               calories: mealData.calories,
               eatenAtDate: mealData.eatenAtDate,
-              eatenAtTime: mealData.eatenAtTime.getHours() * 100 + mealData.eatenAtTime.getMinutes(),
-              owner: 1
+              eatenAtTime: mealData.eatenAtTime.getHours() * 100 + mealData.eatenAtTime.getMinutes()
           };
 
-          return $http.post('/api/user/1/meals', meal);
+          return $http.post('/api/meal', meal);
       }
     };
   });
