@@ -1,7 +1,7 @@
 angular.module('MyApp')
-  .controller('ProfileCtrl', function($scope, $auth, toastr, Account) {
+  .controller('ProfileCtrl', function($scope, $auth, $stateParams, toastr, Account) {
     $scope.getProfile = function() {
-      Account.getProfile(1)
+      Account.getProfile($stateParams.profileId)
         .then(function(response) {
           $scope.user = response.data;
         })
