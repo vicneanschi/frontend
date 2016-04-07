@@ -43,7 +43,7 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
         controller: 'LogoutCtrl'
       })
       .state('profile', {
-        url: '/profile',
+        url: '/profile/:profileId',
         templateUrl: 'partials/profile.html',
         controller: 'ProfileCtrl',
         resolve: {
@@ -51,7 +51,7 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
         }
       })
       .state('meal', {
-        url: '/meal',
+        url: '/meal/:mealId',
         templateUrl: 'partials/meal.html',
         controller: 'MealCtrl',
         resolve: {

@@ -20,8 +20,8 @@
   </div>
   <ul class="nav navbar-nav">
     <li><a href="/#/">Home</a></li>
-    <li ng-if="isAuthenticated()"><a href="/#/meal">Add meal</a></li>
-    <li ng-if="isAuthenticated()"><a href="/#/profile">Profile</a></li>
+    <li ng-if="isAuthenticated()"><a href="/#/meal/">Add meal</a></li>
+    <li ng-if="isAuthenticated()"><a href="/#/profile/">Profile</a></li>
 
   </ul>
   <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
@@ -55,6 +55,8 @@
 <script src="/controllers/logout.js"></script>
 <script src="/controllers/profile.js"></script>
 <script src="/controllers/navbar.js"></script>
+<script src="/controllers/meal.js"></script>
 <script src="/services/account.js"></script>
+<script src="/services/meal.js"></script>
 </body>
 </html>

@@ -3,22 +3,22 @@
     <div class="panel-heading">Add/Edit meal</div>
     <div class="panel-body">
       <legend><i class="ion-clipboard"></i> Add/Edit meal</legend>
-      <form method="post" ng-submit="updateMeal()">
+      <form method="post" ng-submit="createMeal()">
         <div class="form-group">
-          <label class="control-label">Title</label>
+          <label class="control-label"><i class="ion-fork"></i> Title</label>
           <input type="text" class="form-control" ng-model="meal.title" />
         </div>
         <div class="form-group">
-          <label class="control-label"><i class="ion-person"></i>Calories</label>
-          <input type="text" class="form-control" ng-model="meal.calories" />
+          <label class="control-label"><i class="ion-pizza"></i> Calories</label>
+          <input type="number" min="0" class="form-control" ng-model="meal.calories" />
         </div>
         <div class="form-group">
-          <label class="control-label"><i class="ion-at"></i> Date</label>
-          <input type="text" class="form-control" ng-model="meal.createdAtDate" />
+          <label class="control-label"><i class="ion-calendar"></i> Date</label>
+          <input type="date" class="form-control" ng-model="meal.eatenAtDate" />
         </div>
         <div class="form-group">
-          <label class="control-label"><i class="ion-at"></i> Time</label>
-          <input type="text" class="form-control" ng-model="meal.createdAtTime" />
+          <label class="control-label"><i class="ion-clock"></i> Time</label>
+          <input type="time" class="form-control" ng-model="meal.eatenAtTime" />
         </div>
         <button class="btn btn-lg btn-success">Update Information</button>
       </form>
