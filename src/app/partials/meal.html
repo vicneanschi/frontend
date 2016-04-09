@@ -20,7 +20,8 @@
           <label class="control-label"><i class="ion-clock"></i> Time</label>
           <input type="time" class="form-control" ng-model="meal.eatenAtTime" />
         </div>
-        <button class="btn btn-lg btn-success">Update Information</button>
+        <button class="btn btn-lg btn-success btn-default">Update Information</button>
+        <button class="btn btn-danger" ng-show="meal.id" ng-click="delete($event, meal.id)">Delete</button>
       </form>
     </div>
   </div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Meals</div>
+    <div class="panel-body">
+      <table class="table">
+        <tr>
+          <th>Date</th>
+          <th>Calories</th>
+        </tr>
+        <tr ng-attr-class="{{meal.overeaten && 'danger' || 'success'}}" ng-repeat="meal in meals">
+          <td><a href="#/my-meals/{{meal.eatenAtDate | date:'yyyy-MM-ddTHH:mmZ'}}">{{meal.eatenAtDate | date}}</a></td>
+          <td><a href="#/my-meals/{{meal.eatenAtDate | date:'yyyy-MM-ddTHH:mmZ'}}">{{meal.calories}}</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

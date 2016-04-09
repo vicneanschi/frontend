@@ -16,20 +16,21 @@
 <body>
 <div ng-controller="NavbarCtrl" class="navbar navbar-default navbar-static-top">
   <div class="navbar-header">
-    <a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> Meals</a>
+    <a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> Meal service</a>
   </div>
   <ul class="nav navbar-nav">
     <li><a href="/#/">Home</a></li>
-    <li ng-if="isAuthenticated()"><a href="/#/meal/">Add meal</a></li>
-    <li ng-if="isAuthenticated()"><a href="/#/profile/">Profile</a></li>
+    <li ng-if="isAuthenticated()"><a ui-sref="meal">Add meal</a></li>
+    <li ng-if="isAuthenticated()"><a ui-sref="my-meals">My meals</a></li>
+    <li ng-if="isAuthenticated()"><a ui-sref="profile">Profile</a></li>
 
   </ul>
   <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
-    <li><a href="/#/login">Login</a></li>
-    <li><a href="/#/signup">Sign up</a></li>
+    <li><a ui-sref="login">Login</a></li>
+    <li><a ui-sref="signup">Sign up</a></li>
   </ul>
   <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
-    <li><a href="/#/logout">Logout</a></li>
+    <li><a ui-sref="logout">Logout</a></li>
   </ul>
 </div>
 
@@ -44,6 +45,7 @@
 <script src="/vendor/angular-ui-router.js"></script>
 <script src="/vendor/angular-toastr.tpls.js"></script>
 <script src="/vendor/satellizer.js"></script>
+<script src="/vendor/moment.js"></script>
 
 <!-- Application Code -->
 <script src="/app.js"></script>
@@ -56,7 +58,10 @@
 <script src="/controllers/profile.js"></script>
 <script src="/controllers/navbar.js"></script>
 <script src="/controllers/meal.js"></script>
+<script src="/controllers/my-meals.js"></script>
+<script src="/controllers/my-meals-details.js"></script>
 <script src="/services/account.js"></script>
 <script src="/services/meal.js"></script>
+<script src="/services/user.js"></script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 angular.module('MyApp')
-  .controller('ProfileCtrl', function($scope, $auth, $stateParams, toastr, Account) {
+  .controller('ProfileCtrl', function($scope, $auth, toastr, Account, User) {
     $scope.getProfile = function() {
-      Account.getProfile($stateParams.profileId)
-        .then(function(response) {
-          $scope.user = response.data;
+      Account.getMyProfile()
+        .then(function(profile) {
+          $scope.user = profile;
         })
-        .catch(function(response) {
-          toastr.error(response.data.message, response.status);
+        .catch(function(err) {
+          toastr.error(err);
         });
     };
     $scope.updateProfile = function() {
@@ -18,7 +18,7 @@ angular.module('MyApp')
           toastr.error(response.data.message, response.status);
         });
     };
-    
+
 
     $scope.getProfile();
   });

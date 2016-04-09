@@ -1,7 +1,9 @@
 angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.router', 'satellizer'])
-  .config(function($stateProvider, $urlRouterProvider, $authProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $authProvider) {
 
-    $authProvider.httpInterceptor = function() { return true; };
+    $authProvider.httpInterceptor = function () {
+      return true;
+    };
     $authProvider.withCredentials = true;
     $authProvider.tokenRoot = null;
     $authProvider.baseUrl = '/api';
@@ -43,7 +45,7 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
         controller: 'LogoutCtrl'
       })
       .state('profile', {
-        url: '/profile/:profileId',
+        url: '/profile',
         templateUrl: 'partials/profile.html',
         controller: 'ProfileCtrl',
         resolve: {
@@ -54,6 +56,22 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
         url: '/meal/:mealId',
         templateUrl: 'partials/meal.html',
         controller: 'MealCtrl',
+        resolve: {
+          loginRequired: loginRequired
+        }
+      })
+      .state('my-meals', {
+        url: '/my-meals',
+        templateUrl: 'partials/my-meals.html',
+        controller: 'MyMealsCtrl',
+        resolve: {
+          loginRequired: loginRequired
+        }
+      })
+      .state('my-meals-details', {
+        url: '/my-meals/:date',
+        templateUrl: 'partials/my-meals-details.html',
+        controller: 'MyMealsDetailsCtrl',
         resolve: {
           loginRequired: loginRequired
         }

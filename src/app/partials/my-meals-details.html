@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Meals at {{date | date}}</div>
+    <div class="panel-body">
+      <table class="table table-condensed table-striped">
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Text</th>
+          <th>Calories</th>
+        </tr>
+        <tr ng-repeat="meal in meals">
+          <td>{{meal.eatenAtDate | date}}</td>
+          <td>{{meal.formatedTime}}</td>
+          <td><a ui-sref="meal({mealId: meal.id})">{{meal.title}}</a></td>
+          <td>{{meal.calories}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
